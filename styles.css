@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+}
+.course-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+.course-editor-container {
+  border-left: 2px solid #eeeeee;
+  padding-left: 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.file_input_div {
+  width: 304px;
+  height: 40px;
+}
+
+.file_input {
+  float: left;
+}
+
+#file_input_text_div {
+  width: 257px;
+  margin-top: -8px;
+  margin-left: 5px;
+}
+
+.none {
+  display: none;
+}
