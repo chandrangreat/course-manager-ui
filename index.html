@@ -20,12 +20,12 @@
       <div class="course-info-container">
         <form action="#">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="sample3">
+            <input class="mdl-textfield__input" type="text" id="course_title">
             <label class="mdl-textfield__label" for="sample3">Course Title</label>
           </div>
           <br />
           <div class="mdl-textfield mdl-js-textfield">
-            <textarea class="mdl-textfield__input" type="text" rows="3" id="sample5"></textarea>
+            <textarea class="mdl-textfield__input" type="text" rows="3" id="course_description"></textarea>
             <label class="mdl-textfield__label" for="sample5">Course Description</label>
           </div>
           <br />
@@ -42,7 +42,7 @@
             </div>
           </div>
           <br />
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="submitForm(event)">
             Publish
           </button>
         </form>
@@ -87,6 +87,30 @@
           fileInputTextDiv.classList.remove('is-focused');
         }
       }
+    }
+
+    function submitForm(e){
+      e.preventDefault();
+      const courseTitle = document.getElementById('course_title').value;
+      const courseDescription = document.getElementById('course_description').value;
+      const fileInputTextValue = document.getElementById('file_input_file').value;
+      const simplemdeValue = simplemde.value();
+
+      console.log(simplemdeValue);
+
+      const data = {
+        course_title: courseTitle,
+        course_description: courseDescription,
+        enrolled_cadets: fileInputTextValue,
+        mde_value: simplemdeValue
+      }
+
+      fetch('http://localhost:3000/course', {
+        method: 'POST',
+        body: JSON.stringify(data)
+      }).then(response => {
+        return response.json();
+      })
     }
   </script>
 </body>
