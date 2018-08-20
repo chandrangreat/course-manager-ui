@@ -16,41 +16,43 @@
 
 <body>
   <section class="course-container">
-    <div class="course-info-container">
-      <form action="#">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="sample3">
-          <label class="mdl-textfield__label" for="sample3">Course Title</label>
-        </div>
-        <br />
-        <div class="mdl-textfield mdl-js-textfield">
-          <textarea class="mdl-textfield__input" type="text" rows="3" id="sample5"></textarea>
-          <label class="mdl-textfield__label" for="sample5">Course Description</label>
-        </div>
-        <br />
-        <div class="file_input_div">
-          <div class="file_input">
-            <label class="image_input_button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored">
-              <i class="material-icons">file_upload</i>
-              <input id="file_input_file" class="none" type="file" />
-            </label>
+    <div class="course-inner-container">
+      <div class="course-info-container">
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="sample3">
+            <label class="mdl-textfield__label" for="sample3">Course Title</label>
           </div>
-          <div id="file_input_text_div" class="mdl-textfield mdl-js-textfield textfield-demo">
-            <input class="file_input_text mdl-textfield__input" placeholder="Enroll Cadets" type="text" disabled readonly id="file_input_text" />
-            <label class="mdl-textfield__label" for="file_input_text"></label>
+          <br />
+          <div class="mdl-textfield mdl-js-textfield">
+            <textarea class="mdl-textfield__input" type="text" rows="3" id="sample5"></textarea>
+            <label class="mdl-textfield__label" for="sample5">Course Description</label>
           </div>
+          <br />
+          <div class="file_input_div">
+            <div class="file_input">
+              <label class="image_input_button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored">
+                <i class="material-icons">file_upload</i>
+                <input id="file_input_file" class="none" type="file" />
+              </label>
+            </div>
+            <div id="file_input_text_div" class="mdl-textfield mdl-js-textfield textfield-demo">
+              <input class="file_input_text mdl-textfield__input" placeholder="" type="text" disabled readonly id="file_input_text" />
+              <label class="mdl-textfield__label cancel-visibility" for="file_input_text">Enroll Cadets</label>
+            </div>
+          </div>
+          <br />
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+            Publish
+          </button>
+        </form>
+      </div>
+      <div class="course-editor-container">
+        <div class="editor-text-area-container">
+          <textarea id="simplemde" cols="30" rows="10"></textarea>
         </div>
-        <br />
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-          Publish
-        </button>
-      </form>
+      </div>
     </div>
-    <!-- <div class="course-editor-container"> -->
-      <!-- <div class="editor-text-area-container"> -->
-        <textarea id="simplemde" cols="30" rows="10"></textarea>
-      <!-- </div> -->
-    <!-- </div> -->
   </section>
   <script>
     var simplemde = new SimpleMDE({
